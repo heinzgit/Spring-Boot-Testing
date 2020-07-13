@@ -1,12 +1,31 @@
 package com.example.mockito.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+@Entity
 public class Item {
 
-
+    @Id
     private int id;
     private String name;
     private int price;
     private int quality;
+
+    @Transient
+    private int value;
+
+    public Item() {
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 
     public int getId() {
         return id;
